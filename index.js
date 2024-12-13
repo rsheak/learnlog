@@ -6,7 +6,7 @@ const path = require('path');
 
 // Create the Express application
 const app = express();
-const port = 8000;
+const port = 3000;
 
 // Middleware setup
 app.set('view engine', 'ejs'); // Set EJS as the templating engine
