@@ -43,16 +43,17 @@ router.post('/add-log', (req, res) => {
 
 
 // Route to render the home page with logs
-router.get("/", (req, res) => {
-  const query = "SELECT * FROM logs ORDER BY created_at DESC";
+router.get('/', (req, res) => {
+  const query = 'SELECT * FROM books';
   db.query(query, (err, results) => {
-    if (err) {
-      console.error("Error fetching logs: ", err);
-      return res.status(500).send("Error fetching logs");
-    }
-    res.render("index", { logs: results });
+      if (err) {
+          console.error('Error fetching books:', err.message);
+          return res.status(500).send('Error fetching books');
+      }
+      res.render('index', { title: 'LearnLog Home', books: results });
   });
 });
+
 
 // Route to handle form submissions for adding logs
 router.post("/add-log", (req, res) => {
