@@ -75,9 +75,4 @@ router.post("/add-log", (req, res) => {
   });
 });
 
-app.listen(3000, '0.0.0.0', () => {
-  console.log('LearnLog app is running at http://0.0.0.0:3000');
-  console.log('Connected to the MySQL database.');
-});
-
 module.exports = router;
